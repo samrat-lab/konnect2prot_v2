@@ -1,0 +1,452 @@
+/* Navbar styling */
+
+#_dash-global-error-container{
+    height:2px;
+}
+
+.navbar {
+    background-color: #343A40;  /*#6082B6;*/
+    width:100%; /* Full width */
+    position: fixed;
+    
+    
+    height:7.2%; /* Adjusted navbar height */
+    z-index: 1000;
+    color: #fff;
+    font-family: "Audiowide", sans-serif;
+    line-height: 1.5em;
+    padding-left: 2%; /* Use percentage-based padding */
+    box-sizing: border-box;
+    overflow: fixed;
+    padding-top: 0.8%;
+}
+.navbar-logo {
+    height: 95%; /* Adjust logo size */
+    width: auto;
+    margin-right: 35%; /* Spacing between logo and title */
+}
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 7.2%; /* Positioned below the navbar */
+    left: 0;
+    
+    width: 22%; /* Fixed width to ensure it doesn't overlap with other elements */
+    height: 92.4%; /* Adjust height relative to viewport */
+    padding: 1%;
+    padding-top: 4%; /* Added missing semicolon */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Softer shadow for better visibility */
+    overflow-y: auto; /* Scrollable content */
+    background-color: #C0C0C0; /* Semi-transparent violet background */
+    color: #232023; /* Full opacity text (black) */
+    text-align: center;
+    font-size: 100%;
+     /* Prevents text overflow */
+
+    /* Text overflow settings */
+     /* Prevent text from wrapping to a new line */
+    /* Adds ellipsis for overflowed text */
+}
+
+
+         
+/*Begin - Eda side bar styling*/
+
+
+/* General row styling */
+.row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Panel container */
+.panel-container {
+    padding: 25px;
+    margin: 20px auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: #333333;
+    width: 95%;
+}
+
+/* Panel header styling */
+.panel-header {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+    color: #222222;
+}
+
+/* Input label styling */
+.input-label {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 1.1em;
+    color: #555555;
+}
+
+/* Input box styling */
+.input-box {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333333;
+    background-color: #f9f9f9;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-box:focus {
+    border-color: #888888;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+/* Dropdown styling */
+.dropdown {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    border: 1px solid #cccccc;
+    font-size: 1em;
+    color: #333333;
+}
+
+.dropdown:hover, .dropdown:focus-within {
+    border-color: #888888;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Submit button styling */
+.submit-button {
+    background-color: #333333;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #555555;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Output container styling */
+.output-container {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    color: #444444;
+}
+
+
+/*End - Eda side bar styling*/
+
+
+/* Tab styling */
+/* Tab bar styling */
+/* Tab bar styling */
+.tab-bar {
+    position: fixed;
+    top: 7.2%; /* Positioned below the navbar */
+    left: 22%; /* Adjust based on sidebar width */
+    width: calc(100% - 22%); /* Occupies remaining width after sidebar */
+    height: 8%; /* Adjusted height */
+    background-color: #C0C0C0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    padding: 2%; /* Vertical padding */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden; /* Prevents overflow */
+    box-sizing: border-box;
+}
+
+/* Tab styling */
+.tab-button {
+    flex: auto; /* Equal width for each tab */
+     /* Padding around text */
+    margin: 5px; /* Space between tabs */
+    height:3em;
+    color: #000000;
+    font-size: 1em;
+    font-weight: bold;
+    
+    border-radius: 10px; /* Oval corners */
+    cursor: pointer;
+    white-space: nowrap; /* Prevents text wrapping */
+    overflow: hidden; /* Hides overflowed text */
+    text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
+}
+
+
+
+/* Hover effect */
+.tab-bar .tab-button:hover {
+    background-color: #ACACAC;
+    color: #1D2E28;
+}
+
+
+
+/* Main content styling */
+.content{
+    margin-top:10%; /* Offset below the tab bar */
+    margin-left:22%; /* Align content after the sidebar */
+    padding-left:4%;
+    padding-top:1%;
+    padding-right:2%;
+    background-color: #fff;
+    overflow-x: auto;
+    overflow-y: auto;
+    height:100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Upload button */
+#upload-button {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#upload-button:hover {
+    background-color: #0056b3;
+}
+
+/* Loading icon positioning */
+#loading-output {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Class for highlighting elements as anchor hyperlinks */
+.highlight-anchor {
+    color: #007bff; /* Standard blue hyperlink color */
+    text-decoration: underline; /* Retains the underline */
+    cursor: pointer; /* Changes cursor to a pointer */
+    font-weight: bold; /* Makes the link text bold */
+    transition: color 0.3s ease; /* Smooth color change effect */
+}
+
+/* Hover effect: slightly darker color */
+.highlight-anchor:hover {
+    color: #0056b3; /* Slightly darker blue */
+}
+
+/* temprory css for scroller*/
+/* ===============Begin====================*/
+/* General Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px; /* Width of vertical scrollbar */
+    height: 10px; /* Height of horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #e0e0e0; /* Light gray background for the track */
+    border-radius: 10px; /* Rounded corners for the track */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Slight inner shadow for a physical effect */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #b0b0b0, #d0d0d0); /* Gradient gray for a button-like thumb */
+    border-radius: 8px; /* Rounded corners for the thumb */
+    border: 2px solid #e0e0e0; /* Border to match the track background */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle inner shadow for a physical look */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, #a0a0a0, #c0c0c0); /* Slightly darker gray gradient on hover */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); /* Enhance the button-like effect on hover */
+}
+
+/* For Firefox */
+.scrollable-element {
+    scrollbar-width: thin; /* Thin scrollbar for Firefox */
+    scrollbar-color: #b0b0b0 #e0e0e0; /* Thumb (dark gray) and track (light gray) colors */
+}
+
+/* Optional: Smooth scrolling effect for a better user experience */
+html {
+    scroll-behavior: smooth;
+}
+/* ===============Ends=====================*/
+/* Designing new layout for network tab */
+/* ===============Starts=====================*/
+
+/* Overall dashboard container */
+.dashboard {
+    padding: 20px;
+    background-color: #f5f5f5; /* Light background for dashboard */
+}
+
+/* Grid layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+    gap: 10px; /* Space between grid items */
+}
+
+/* Full-width row */
+.grid-item.full-width {
+    grid-column: span 2; /* Span across two columns */
+}
+
+/* Panel styling */
+.grid-item {
+    background-color: white; /* White panel background */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px;
+    margin: 5px 5px 5px 5px;
+    display: inline-block;
+}
+
+/* Title styling for each panel */
+.panel-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Dark gray text */
+    margin-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eaeaea; /* Light gray border below title */
+    padding-bottom: 5px;
+}
+
+/* Banner styling */
+.banner {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #e0e0e0; /* Light gray for banners */
+    text-align: center;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px;
+}
+
+
+
+/*Remove the code below before responsive desing*/
+
+/* Input field with depth effect */
+.custom-input {
+    padding: 12px 20px; /* Add comfortable spacing */
+    width: 100%; /* Full width */
+    border: none; /* Remove default border */
+    outline: none; /* Remove focus outline */
+    border-radius: 10px; /* Smooth corners */
+    font-size: 16px; /* Adjust font size */
+    font-weight: 500; /* Slightly bold for readability */
+    color: #495057; /* Subtle text color */
+    background: #f1f3f6; /* Light background color */
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), 
+                inset -4px -4px 8px rgba(255, 255, 255, 0.7); /* Inset shadows */
+    transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out; /* Smooth interaction */
+}
+
+.custom-input:focus {
+    background: #e9ecef; /* Slightly darker background when focused */
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.15), 
+                inset -2px -2px 4px rgba(255, 255, 255, 0.8); /* Highlight inset effect */
+}
+
+/* Button with raised effect */
+.custom-button {
+    padding: 12px 24px; /* Add padding */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Smooth edges */
+    font-size: 16px; /* Adjust font size */
+    font-weight: 600; /* Make text bold */
+    color: #fff; /* White text color */
+     /* background: linear-gradient(145deg, #4caf50, #43a047); Subtle gradient for button */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), 
+                -4px -4px 8px rgba(255, 255, 255, 0.1); /* Outer shadow for raised effect */
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out; /* Smooth interaction */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.custom-button:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 
+                -2px -2px 4px rgba(255, 255, 255, 0.1); /* Slightly reduce shadow on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+.custom-button:active {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), 
+                inset -2px -2px 4px rgba(255, 255, 255, 0.1); /* Inset shadow for "pressed" look */
+    transform: translateY(0); /* Reset lift */
+    background: linear-gradient(145deg, #43a047, #4caf50); /* Reverse gradient for active effect */
+}
+
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+}
+
+
+
+/* ===============Ends=====================*/
+
+
+
+/* Responsive adjustments for smaller screens */
+/* Responsive adjustments for screens smaller than 1024px */
+
+
+/* Responsive adjustments for screens smaller than 768px */
+@media (max-width: 799px) {
+    .navbar {
+        height: 45px; /* Adjust navbar height */
+        line-height: 0.5em;
+    }
+
+    .sidebar {
+        width: 100%; /* Full-width sidebar */
+        height: auto; /* Adjust height automatically */
+        position: relative;
+        top: 1em; /* Positioned just below the navbar */
+        z-index: 999;
+    }
+
+    .tab-bar {
+        top: auto;
+        position: relative;
+        left: 0;
+        width: 100%; /* Full-width tab bar */
+        margin-top: 50px; /* Ensure spacing below the sidebar */
+        height:15em;
+    }
+
+    .content {
+        margin-left: 0;
+        margin-top: 70px; /* Positioned below the tab bar */
+        width: 100%; /* Full-width content */
+        padding: 20px;
+    }
+}

@@ -1,0 +1,663 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Konnect2Prot Version 2 - A modern and responsive landing page for showcasing our project." name="description"/>
+  <title>
+   Konnect2Prot Version 2
+  </title>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+         /*#Abhinav change*/
+        .navbar {
+            margin-bottom: 0;
+            background-color: #343a40;
+            height:80px;
+        }
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+            font-size: 22px;
+        }
+        .navbar-logo {
+        height: 60px; /* Adjust logo size */
+        width: auto;
+        margin-right: 1px;
+        margin-left: 1px; /* Spacing between logo and title */
+        }
+        .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('static/networ_banner.jpg') no-repeat center center;
+        background-size: cover;
+        color: white;
+        text-align: center;
+        padding: 150px 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;  /* Ensure content is on top */
+        overflow: hidden;
+        z-index: 1; /* Set z-index to ensure content is above canvas */
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .hero .btn {
+            font-size: 1.25rem;
+            padding: 15px 40px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .team-member img {
+            border-radius: 50%;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .footer {
+            background: #343a40;
+            padding: 20px 0;
+            text-align: center;
+            color: #ffffff;
+        }
+        .footer a {
+            color: #ffffff;
+        }
+        .network-animation {
+        position: absolute;  /* Position the canvas absolutely */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;  /* Place behind the content */
+        pointer-events: auto; /* Allow interactions with the canvas */
+        }
+        #loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a, #333333);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  #loading-content {
+    text-align: center;
+    color: #f1f1f1;
+  }
+
+  #loading-icon {
+    font-size: 3rem;
+    color: #f1f1f1;
+    margin-bottom: 0.5rem;
+  }
+
+  #loading-content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  /* Hide content while loading */
+  body.hidden {
+    overflow: hidden;
+  }
+
+  body.hidden section {
+    display: none;
+  }
+        
+
+
+
+  /* WebKit Scrollbar Styling */
+  body::-webkit-scrollbar {
+      width: 15px; /* Width of the scrollbar */
+      height: 10px; /* Height for horizontal scrollbar */
+  }
+
+  body::-webkit-scrollbar-thumb {
+      background: #464540; /* Stylish gradient thumb */
+      border-radius: 10px; /* Rounded corners */
+      border: 2px solid #f0f2f5; /* Padding effect */
+  }
+
+  body::-webkit-scrollbar-track {
+      background: #CECECC; /* Track color */
+      border-radius: 10px; /* Rounded corners */
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(90deg, #5146d7, #6c63ff); /* Darker on hover */
+  }
+  </style>
+ </head>
+ <body data-bs-offset="70" data-bs-spy="scroll" data-bs-target="#navbar">
+  <!-- Loading Icon -->
+   <div id="loading">
+    <div id="loading-content">
+      <i id="loading-icon" class="fas fa-spinner fa-spin"></i>
+      <p>Loading, please wait...</p>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
+   <div class="container">
+    
+     <a class="navbar-brand" href="#"><img src="static/New_logo_k2p_caps.png" alt="Logo" class="navbar-logo" ></a>
+    
+    <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+       <a class="nav-link" href="#home">
+        Home
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="#about">
+        About Us
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="#features">
+        Features
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="#team">
+        Team
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="#contact">
+        Contact Us
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="/tutorial">
+        Tutorial
+       </a>
+      </li>
+      <!--
+      <li class="nav-item dropdown">
+       <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdown" role="button">
+        Tutorials
+       </a>
+       <div aria-labelledby="navbarDropdown" class="dropdown-menu">
+        <a class="dropdown-item" href="#">
+         Getting Started
+        </a>
+        <a class="dropdown-item" href="#">
+         Advanced Features
+        </a>
+        <a class="dropdown-item" href="#">
+         FAQ
+        </a>
+       </div>
+      </li>-->
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <section class="hero" id="home">
+   <div class="container">
+    <h1>
+     Welcome to konnect2prot 2.0
+    </h1>
+    <p>
+     Now with added features for advanced analytics
+    </p>
+    <a class="btn btn-secondary" href="#about">
+     Learn More
+    </a>
+    <a class="btn btn-secondary" href="/dashboard/">
+     Click  here
+    </a>
+   </div>
+   <canvas class="network-animation" id="network-animation">
+   </canvas>
+  </section>
+  <section class="py-5" id="about">
+   <div class="container justify-content-center">
+    <div class="section-title">
+     <h2>
+      About Us
+     </h2>
+     <p>
+      Discover our mission and history.
+     </p>
+    </div>
+    <div class="row ">
+     <div class="col-md-6">
+      <p>
+       konnect2prot 2.0 is an advanced, indigenously developed web-based platform designed by Dr. Samrat Chatterjee and his team. It takes protein analysis to the next level with a suite of robust analysis and enrichment tools. Built to cater to the needs of modern biological research, this version extends the core functionality of network generation with additional features for in-depth investigation of biological pathways, protein-protein interactions (PPIs), and functional enrichment.
+      </p>
+     </div>
+     <div class="col-md-6">
+      <ul class="list-unstyled">
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Founded in 2022
+       </li>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Over 10,000 page hits for version 1
+       </li>
+       <li>
+        <i class="fas fa-check-circle">
+        </i>
+        Scientifically validated
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="py-5 bg-light" id="features">
+   <div class="container">
+    <div class="section-title">
+     <h2>
+      Features
+     </h2>
+     <p>
+      Explore the core features of our platform
+     </p>
+    </div>
+    <div class="row">
+     <div class="col-md-4">
+      <div class="card mb-4">
+       <div class="card-body text-center">
+        <i class="fas fa-chart-pie fa-3x mb-3">
+        </i>
+        <h5 class="card-title">
+         Analytics Dashboard
+        </h5>
+        <p class="card-text">
+         Analyze biological data with our comprehensive analytics dashboard
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="col-md-4">
+      <div class="card mb-4">
+       <div class="card-body text-center">
+        <i class="fas fa-dna fa-3x mb-3">
+        </i>
+        <h5 class="card-title">
+         Understand your data
+        </h5>
+        <p class="card-text">
+         Visualization tools, like box and density plot to understand your data
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="col-md-4">
+      <div class="card mb-4">
+       <div class="card-body text-center">
+        <i class="fas fa-chart-line fa-3x mb-3">
+        </i>
+        <h5 class="card-title">
+         Differential Expression Analysis
+        </h5>
+        <p class="card-text">
+         Obtain perturbation using fold change, supported by FDR correction
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="col-md-4">
+      <div class="card mb-4">
+       <div class="card-body text-center">
+        <i class="fas fa-globe  fa-3x mb-3">
+        </i>
+        <h5 class="card-title">
+         Knowledge driven discovery
+        </h5>
+        <p class="card-text">
+         Understand perturbation for biological pathways and complexes
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="col-md-4">
+      <div class="card mb-4">
+       <div class="card-body text-center">
+        <i class="fas fa-database fa-3x mb-3">
+        </i>
+        <h5 class="card-title">
+         Predictive analytics
+        </h5>
+        <p class="card-text">
+         Machine learning algorithms are used to asses predictability of a feature/gene/protein.
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="col-md-4">
+      <div class="card mb-4">
+       <div class="card-body text-center">
+        <i class="fas fa-chart-area fa-3x mb-3">
+        </i>
+        <h5 class="card-title">
+         Visualization
+        </h5>
+        <p class="card-text">
+         Advance visualization like volcano plot and enrichmetns for disease, pathway and process
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="py-5" id="team">
+   <div class="container">
+      <div class="section-title">
+         <h2>Our Team</h2>
+         <p>Meet the chevalier of konnect2prot</p>
+      </div>
+      <!-- Team Leader -->
+      <div class="row mb-5 justify-content-center">
+         <div class="col-md-6 text-center">
+            <div class="team-member">
+               <img alt="Professional headshot of Dr. Samrat Chatterjee, Team Leader" 
+                    class="img-fluid mb-3 rounded-circle" 
+                    height="200" src="static/samrat_sir.jpg" width="200"/>
+               <h4>Dr. Samrat Chatterjee</h4>
+               <p>Associate Professor</p>
+               <p>He is a mathematician who applies mathematical modeling and systems biology to solve complex biological problems. He formulated and supervised the project.</p>
+            </div>
+         </div>
+      </div>
+      <!-- Team Members -->
+      <div class="row text-center">
+         <div class="col-md-4">
+            <div class="team-member">
+               <img alt="Professional headshot of Dr. Dipanka Tanu Sarmah" 
+                    class="img-fluid mb-3 rounded-circle" 
+                    height="150"  width="150" src="static/dts.jpg" />
+               <h5>Dr. Dipanka Tanu Sarmah</h5>
+               <p>Post Doctoral Researcher</p>
+               <p>His research focuses on exploring the complexity of biological systems using mathematical modeling and network biology. He contributed to curation and application design.</p>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <div class="team-member">
+               <img alt="Professional headshot of Shivam Kumar" 
+                    class="img-fluid mb-3 rounded-circle" 
+                    height="150" src="static/shivam.jpg" width="150"/>
+               <h5>Shivam Kumar</h5>
+               <p>PhD Student</p>
+               <p>He specializes in computational biology and develops pattern recognition algorithms using AI/ML. He designed and developed the web application.</p>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <div class="team-member">
+               <img alt="Professional headshot of Abhinav Agarwal" 
+                    class="img-fluid mb-3 rounded-circle" 
+                    height="150" src="static/Abhinav.jpeg" width="150"/>
+               <h5>Abhinav Agarwal</h5>
+               <p>PhD Student</p>
+               <p>He is doing PhD in Biosciences, developing pattern recognition algorithms with AI/ML. He contributed to the design and development of the web application.</p>
+            </div>
+         </div>
+      </div>
+      <div class="row mb-5 justify-content-center">
+         <div class="col-md-6 text-center">
+            <div class="team-member">
+               <br><br>
+                 <h5>Other contributers:Jaynenedra Jyoti Kundu and Devvrat Pandey </h5>
+            </div>
+         </div>
+      </div>
+   </div>
+  </section>
+  <section class="py-5 bg-light" id="contact">
+   <div class="container">
+      <div class="section-title text-center mb-4">
+         <h2 class="text-primary">Contact Us</h2>
+         <p class="text-muted">We’re here to help! Reach out to us with any questions, concerns, or feedback.</p>
+      </div>
+      <div class="row justify-content-center">
+         <div class="col-md-8">
+            <form class="contact-form border rounded shadow-sm p-4 bg-white" action="/feedback" method="POST">
+               <div class="mb-3">
+                  <label class="form-label fw-bold" for="name">Name</label>
+                  <input class="form-control" id="name" name="name" placeholder="Enter your name" required="" type="text"/>
+               </div>
+               
+               
+               <div class="mb-3">
+                  <label class="form-label fw-bold" for="email">Email</label>
+                  <input class="form-control" id="email" name="email" placeholder="Enter your email address" required="" type="email"/>
+               </div>
+               <div class="mb-3">
+                  <label class="form-label fw-bold" for="subject">Subject</label>
+                  <input class="form-control" id="subject" name="subject" placeholder="Subject" required="" type="text"/>
+               </div>
+               
+               <div class="mb-3">
+                  <label class="form-label fw-bold" for="message">Message</label>
+                  <textarea class="form-control" id="message" name="message" placeholder="Write your message here" required="" rows="4"></textarea>
+               </div>
+               <div class="mb-3">
+                 
+               <button class="btn btn-primary w-100" type="submit">Send Message</button>
+            </form>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+  <footer class="footer py-3 bg-dark text-light">
+   <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+         <!-- Navigation Links -->
+         <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+               <a href="#home" class="text-light text-decoration-none">Home</a>
+            </li>
+            <li class="list-inline-item">
+               <a href="#about" class="text-light text-decoration-none">About</a>
+            </li>
+            <li class="list-inline-item">
+               <a href="#features" class="text-light text-decoration-none">Features</a>
+            </li>
+            <li class="list-inline-item">
+               <a href="#contact" class="text-light text-decoration-none">Contact</a>
+            </li>
+         </ul>
+
+         <!-- Web Counter -->
+         <a href="https://www.hitwebcounter.com" target="_blank" class="me-3">
+            <img src="https://hitwebcounter.com/counter/counter.php?page=18052337&style=0006&nbdigits=5&type=page&initCount=0" 
+                 title="Counter Widget" 
+                 alt="Visit counter For Websites" 
+                 border="0" />
+         </a>
+
+         <!-- Copyright -->
+         <p class="mb-0">
+            Copyright ©2024 Dr. Samrat Chatterjee's LAB (THSTI)
+            <a href="#" class="text-light text-decoration-none">Privacy Policy</a>
+         </p>
+      </div>
+   </div>
+</footer>
+
+  <script crossorigin="anonymous" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+3i5q5YlF0h+4l5AN5ni1uD+8i5+5" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script>
+   // Network animation script
+    const canvas = document.getElementById('network-animation');
+    const ctx = canvas.getContext('2d');
+
+    let width, height, particles, mouse;
+
+    // Initialize the canvas and particles
+    function init() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+
+        // Create particles
+        particles = [];
+        for (let i = 0; i < 150; i++) {
+            particles.push(new Particle());
+        }
+
+        // Initialize mouse object for interaction
+        mouse = {
+            x: null,
+            y: null,
+            radius: 150, // Radius of interaction
+        };
+    }
+
+    // Particle constructor
+    function Particle() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.5; // Slower horizontal velocity
+        this.vy = (Math.random() - 0.5) * 0.5; // Slower vertical velocity
+        this.baseRadius = Math.random() * 3 + 1; // Base size of particle
+        this.radius = this.baseRadius;
+        this.color = 'rgba(255, 255, 255, 0.8)';
+    }
+
+    // Update particle position and interaction logic
+    Particle.prototype.update = function () {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Bounce off canvas edges
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+
+        // Interact with the mouse
+        const dx = this.x - mouse.x;
+        const dy = this.y - mouse.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < mouse.radius) {
+            const angle = Math.atan2(dy, dx);
+            const force = 0.05; // Smaller force for subtle interaction
+            this.vx += Math.cos(angle) * force;
+            this.vy += Math.sin(angle) * force;
+
+            // Change size and color dynamically based on distance
+            this.radius = this.baseRadius + (mouse.radius - distance) / 10;
+            const intensity = Math.max(0, 1 - distance / mouse.radius);
+            this.color = `rgba(255, ${200 + 55 * intensity}, ${200 + 55 * intensity}, ${0.8 + 0.2 * intensity})`;
+        } else {
+            // Reset to default size and color when not near the mouse
+            this.radius = this.baseRadius;
+            this.color = 'rgba(255, 255, 255, 0.8)';
+        }
+    };
+
+    // Draw the particle
+    Particle.prototype.draw = function () {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+    };
+
+    // Draw connecting lines between close particles
+    function drawLines() {
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 120) {
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / 120})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    // Animate the particles
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        particles.forEach((particle) => {
+            particle.update();
+            particle.draw();
+        });
+
+        drawLines();
+        requestAnimationFrame(animate);
+    }
+
+    // Handle window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            init();
+        }, 200);
+    });
+
+    // Track mouse movement
+    canvas.addEventListener('mousemove', (event) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = event.clientX - rect.left;
+        mouse.y = event.clientY - rect.top;
+    });
+
+    // Handle mouse clicks for particle burst
+    canvas.addEventListener('click', () => {
+        particles.forEach((particle) => {
+            particle.vx += (Math.random() - 0.5) * 5;
+            particle.vy += (Math.random() - 0.5) * 5;
+        });
+    });
+
+    // Initialize and start animation
+    init();
+    animate();
+
+  </script>
+   <script>
+    // Remove the loading icon after the page fully loads
+    window.addEventListener('load', function () {
+      document.getElementById('loading').style.display = 'none';
+      document.body.classList.remove('hidden');
+    });
+  </script>
+ </body>
+</html>
